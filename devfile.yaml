@@ -29,7 +29,6 @@ components:
   - name: swift
     container:
       image: swift:5.9.1-rhel-ubi9
-      memoryLimit: 512Mi
       mountSources: true
 
 commands:
