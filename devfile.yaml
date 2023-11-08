@@ -28,7 +28,8 @@ components:
 
   - name: swift
     container:
-      image: swift:5.9.1-rhel-ubi9
+      # image: swift:5.9.1-rhel-ubi9
+      image: swift:latest
       mountSources: true
 
 commands:
