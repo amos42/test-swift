@@ -1,0 +1,44 @@
+schemaVersion: 2.1.0
+metadata:
+  name: test-swift
+projects:
+  - name: test-swift
+    git:
+      remotes:
+        origin: https://github.com/amos42/test-swift.git  
+components:
+  - name: tools
+    container:
+      image: 'quay.io/devfile/universal-developer-image:ubi8-latest'
+      env:
+      # The values below are used to set up the environment for running the application
+        - name: SECRET
+          value: 220fd770-c028-480d-8f95-f84353c7d55a 
+        - name: NODE_ENV
+          value: production
+        - name: npm_config_registry
+          value: "http://nexus.sdsdev.co.kr:8081/repository/npm/"
+      endpoints:
+        - exposure: public
+          name: nodejs
+          targetPort: 8080
+          protocol: https
+      memoryLimit: 1G
+      mountSources: true
+
+  - name: swift
+    container:
+      image: swift:5.9.1-rhel-ubi9
+      memoryLimit: 512Mi
+      mountSources: true
+
+commands:
+  - id: run-application
+    exec:
+      label: "Run the application"
+      component: tools
+      workingDir: ${PROJECT_SOURCE}
+      commandLine: "npm install && node --inspect=9229 app.js"
+      group:
+        kind: run
+      
