@@ -28,7 +28,8 @@ components:
 
   - name: swift
     container:
-      command: /bin/bash
+      command:
+        - /bin/bash
       # image: swift:5.9.1-rhel-ubi9
       image: swift:latest
       mountSources: true
