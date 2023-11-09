@@ -27,6 +27,13 @@ components:
       image: swift:latest
       args: ['tail', '-f', '/dev/null']
       mountSources: true
+      volumeMounts:
+        - name: swiftCache
+          path: /.cache
+
+  - name: swiftCache
+    volume:
+      size: 1024Mi
 
 commands:
   - id: run-application
