@@ -25,6 +25,7 @@ components:
     container:
       # image: swift:5.9.1-rhel-ubi9
       image: swift:latest
+      args: ['tail', '-f', '/dev/null']
       mountSources: true
 
 commands:
