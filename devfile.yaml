@@ -31,7 +31,7 @@ components:
         - name: swift-cache-storage
           path: '/.cache'
         - name: swift-pm-storage
-          path: '/.swiftpm
+          path: '/.swiftpm'
 
   - name: swift-cache-storage
     volume:
