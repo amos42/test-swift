@@ -29,7 +29,7 @@ components:
       mountSources: true
       volumeMounts:
         - name: swiftCache
-          path: /.cache
+          path: '/.cache'
 
   - name: swiftCache
     volume:
