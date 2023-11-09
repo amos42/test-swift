@@ -41,12 +41,20 @@ components:
       size: 1024Mi
 
 commands:
-  - id: run-application
+  - id: build-application
     exec:
-      label: "Run the application"
-      component: tools
+      label: "Build the swift application"
+      component: swift
       workingDir: ${PROJECT_SOURCE}
-      commandLine: "npm install && node --inspect=9229 app.js"
+      commandLine: "swift build"
       group:
         kind: run
-      
+
+  - id: run-application
+    exec:
+      label: "Run the swift application"
+      component: swift
+      workingDir: ${PROJECT_SOURCE}
+      commandLine: "swift run"
+      group:
+        kind: run
