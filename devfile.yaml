@@ -28,10 +28,10 @@ components:
       args: ['tail', '-f', '/dev/null']
       mountSources: true
       volumeMounts:
-        - name: swiftCache
+        - name: swift-cache
           path: '/.cache'
 
-  - name: swiftCache
+  - name: swift-cache
     volume:
       size: 1024Mi
 
