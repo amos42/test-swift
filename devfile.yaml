@@ -26,7 +26,7 @@ components:
       command:
         - /bin/bash
       # image: swift:5.9.1-rhel-ubi9
-      image: swift:test
+      image: swift:latest
       mountSources: true
 
 commands:
